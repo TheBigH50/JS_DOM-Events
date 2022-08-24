@@ -10,9 +10,9 @@ const getH3Tags = document.getElementsByTagName("h3"); for (let ele of getH3Tags
 /*----------- Exercise #2: CREATING/APPENDING/INSERTING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Create a paragraph element using this document.createElement() and put this text inside "This node was created using the createElement() method"
-const newParagraph1 = document.createElement("p"); newParagraph1.innerHTML = `This node was created using the createElement() method`
+const newParagraph1 = document.createElement("p"); const paraContent1 = document.createTextNode(`This node was created using the createElement() method`);
 // TODO: Append the created node to the parent node using the element.appendChild() method
-
+newParagraph1.appendChild(paraContent1); const newP = document.getElementById("parent"); newP.appendChild(newParagraph1);
 // TODO: Create a <a> element using this document.createElement() and put this text inside "I am a <a> tag"
 
 // BONUS: Add a link href to the <a>
