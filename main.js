@@ -14,9 +14,9 @@ const newParagraph1 = document.createElement("p"); const paraContent1 = document
 // TODO: Append the created node to the parent node using the element.appendChild() method
 newParagraph1.appendChild(paraContent1); const newP = document.getElementById("parent"); newP.appendChild(newParagraph1);
 // TODO: Create a <a> element using this document.createElement() and put this text inside "I am a <a> tag"
-
+const newA = document.createElement("a"); newA.innerHTML = `I am a <a href="https://geeksforgeeks.org">&lt;a&gt;</a> tag`; newP.appendChild(newA);
 // BONUS: Add a link href to the <a>
-
+//newA.title = "I am a <a> tag"; newA.href = "https://www.geeksforgeeks.org"; newP.appendChild(newA);
 // TODO: Insert the created <a> in the parent but before the <p> you just created using the element.insertBefore() method
 
 /*----------- Exercise #3: REMOVING/REPLACING ELEMENTS/OBJECTS -----------*/
