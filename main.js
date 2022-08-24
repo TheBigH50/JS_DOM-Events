@@ -6,11 +6,11 @@ const getNode1 = document.getElementById("node1"); getNode1.innerHTML = 'I used 
 // Select Node #2 and change the text to: "I used the getElementByClassName("node2") method to access this" */
 const getNode2 = document.getElementsByClassName("node2"); getNode2[0].innerHTML = `I used the getElementByClassName("node2") method to access this`
 // Select ALL the h3 tags and change the text to: "I used the getElementByTagName("h3") method to access all of these" */
-
+const getH3Tags = document.getElementsByTagName("h3"); for (let ele of getH3Tags) {ele.innerHTML = `I used the getElementByTagName("h3") method to access all of these`;}
 /*----------- Exercise #2: CREATING/APPENDING/INSERTING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Create a paragraph element using this document.createElement() and put this text inside "This node was created using the createElement() method"
-
+const newParagraph1 = document.createElement("p"); newParagraph1.innerHTML = `This node was created using the createElement() method`
 // TODO: Append the created node to the parent node using the element.appendChild() method
 
 // TODO: Create a <a> element using this document.createElement() and put this text inside "I am a <a> tag"
