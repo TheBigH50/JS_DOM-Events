@@ -39,7 +39,7 @@ const newChildNode = document.createElement("p");
 newChildNode.textContent = `New Child Node`;
 parent.replaceChild(newChildNode, N1);
 // TODO: Remove the "New Child Node"
-
+parent.removeChild(newChildNode);
 /*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
 
