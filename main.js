@@ -3,7 +3,7 @@ console.log("Script attached");
 
 // Select Node #1 and change the text to: "I used the getElementById("node1") method to access this"
 const getNode1 = document.getElementById("node1");
-getNode1.innerHTML = 'I used the getElementById("node1") method to access this';
+getNode1.innerHTML = `I used the getElementById("node1") method to access this`;
 // Select Node #2 and change the text to: "I used the getElementByClassName("node2") method to access this" */
 const getNode2 = document.getElementsByClassName("node2");
 getNode2[0].innerHTML = `I used the getElementByClassName("node2") method to access this`;
@@ -33,7 +33,11 @@ newP.insertBefore(newA, newParagraph1);
 /*----------- Exercise #3: REMOVING/REPLACING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Replace the "Child Node" with a new <p> element that reads "New Child Node"
-
+const N1 = document.querySelector("#N1");
+const parent = document.querySelector('#exercise-container3');
+const newChildNode = document.createElement("p");
+newChildNode.textContent = `New Child Node`;
+parent.replaceChild(newChildNode, N1);
 // TODO: Remove the "New Child Node"
 
 /*----------- Exercise #4: LIST ITEMS ----------- */
