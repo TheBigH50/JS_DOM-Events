@@ -57,6 +57,7 @@ let list = [
 ];
 
 // TODO: Create an unordered list element
+const list1 = createElement("ul"); list1.append(list);
 
 // TODO: Iterate over the array values, and create a list item element for each
 
