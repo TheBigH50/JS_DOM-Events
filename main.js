@@ -34,7 +34,7 @@ newP.insertBefore(newA, newParagraph1);
 
 // TODO: Replace the "Child Node" with a new <p> element that reads "New Child Node"
 const N1 = document.querySelector("#N1");
-const parent = document.querySelector('#exercise-container3');
+const parent = document.querySelector("#exercise-container3");
 const newChildNode = document.createElement("p");
 newChildNode.textContent = `New Child Node`;
 parent.replaceChild(newChildNode, N1);
@@ -57,7 +57,7 @@ let list = [
 ];
 
 // TODO: Create an unordered list element
-const list1 = createElement("ul");
+const list1 = document.createElement("ul");
 // TODO: Iterate over the array values, and create a list item element for each
 for (let item of list) {
   let li = document.createElement("li");
@@ -75,3 +75,45 @@ container.appendChild(list1);
 // -> "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
 // This div should be a 'modal' that covers the main content on the screen
 // BONUS: The modal popup should be able to be closed. Refactor for this functionality
+function handleEsc(event) {
+  if (event.key == "Escape") {
+    document.body.removeChild(document.querySelector("#modal"));
+  }
+}
+
+function show(event) {
+  window.addEventListener("keyup", handleEsc);
+
+  let modalContainer = document.createElement("div");
+  let modalBody = document.createElement("div");
+  let title = document.createElement("h2");
+  let content = document.createElement("p");
+  let closeButton = document.createElement("button");
+
+  title.textContent = "Action Required";
+  content.textContent = "You need to ...";
+  closeButton.textContent = "Close";
+  closeButton.addEventListener("click", (event) => {
+    document.body.removeChild(modalContainer);
+    window.removeEventListener("keyup", handleEsc);
+  });
+
+  modalContainer.id = "modal";
+  modalBody.classList.add("modal-card");
+
+  modalContainer.addEventListener("click", (event) => {
+    console.log(event);
+    if (event.target == modalContainer) {
+      document.body.removeChild(modalContainer);
+      window.removeEventListener("keyup", handleEsc);
+    }
+  });
+
+  modalBody.append(title, content, closeButton);
+  modalContainer.appendChild(modalBody);
+  document.body.appendChild(modalContainer);
+}
+
+let btn = document.querySelector("#btn");
+
+btn.addEventListener("click", show);
