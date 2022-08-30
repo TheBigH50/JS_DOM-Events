@@ -57,14 +57,18 @@ let list = [
 ];
 
 // TODO: Create an unordered list element
-const list1 = createElement("ul"); list1.append(list);
-
+const list1 = createElement("ul");
 // TODO: Iterate over the array values, and create a list item element for each
-
+for (let item of list) {
+  let li = document.createElement("li");
+  li.textContent = item;
+  list1.appendChild(li);
+}
 // TODO: Append the new list items to the unordered list element
 
 // TODO: Append the unordered list to the `div#container` under exercise 4
-
+let container = document.getElementById("container");
+container.appendChild(list1);
 /*----------- Exercise #5: DOM EVENTS --------------*/
 
 // TODO: write a function called "show" which creates a new div with an alerting message to the user with this message
